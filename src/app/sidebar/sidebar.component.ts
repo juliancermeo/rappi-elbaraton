@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Http, Response } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SortbyPipe } from './../sortby.pipe'; 
 import 'rxjs/add/operator/map';
-
  
 @Component({
   selector: 'sidebar',
@@ -12,6 +12,7 @@ import 'rxjs/add/operator/map';
 })
 
 export class SidebarComponent implements OnInit {
+  
 	public panelOpenState: boolean = false;
 	private apiUrl = "./../assets/data/categories.json";
 	public data: any = {};
@@ -20,7 +21,6 @@ export class SidebarComponent implements OnInit {
 
 
   constructor(private http: Http) { }
-  // constructor(private appService: AppService) { }
 
   ngOnInit() {
   	this.getCategories();
@@ -37,10 +37,11 @@ export class SidebarComponent implements OnInit {
   	this.getCategories()
   		.subscribe((data) => {
         	this.data = data;
-        	console.log(data);
       	});
 
   }
+
+
     
 
 

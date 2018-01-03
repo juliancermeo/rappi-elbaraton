@@ -5,7 +5,7 @@
     <sidebar></sidebar>
   </div>
   <div class="col-md-8">
-  	<order-by></order-by>
-    <app-products></app-products>
+    <order-by (search)="search($event)" (select)="sortProducts($event)"></order-by>
+    <app-products searchText="{{inputSearch}}" field="{{sortBy}}"></app-products>
   </div>
 </main> 

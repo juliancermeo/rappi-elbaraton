@@ -3,5 +3,15 @@
 	position: fixed; 
 	right: 10px;
 	z-index: 10;
-	display: none;
+	/*display: none;*/
+
+}
+button {
+	width: 100%;
+}
+.right {
+	text-align: right;
+}
+.title {
+	font-weight: bold;
 }

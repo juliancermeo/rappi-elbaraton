@@ -1,29 +1,42 @@
-<div class="basket" >
-  <mat-card class="card">
+<div class="basket container" >
+  <mat-card >
     <mat-card-header>
-      <mat-card-title>Tu orden en el Baraton es</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-title><h4>Tu orden en el Baraton es</h4></mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
-
-     <mat-card-title>Producto</mat-card-title>
-     <mat-card-subtitle>$27.300</mat-card-subtitle>
-     <div class="resume-checkout">
-           <ul class="resume">
-              <li><span class="title">Subtotal:</span> <span class="amount">$&nbsp;27.300</span></li>
-              <li>
+    <div class="row">
+      
+    </div>
+    <div class="row">
+      <div class="col-xs-2"> 1 </div>
+        <div class="col-xs-10">
+          <mat-card-title>Producto</mat-card-title>
+          <mat-card-subtitle>$27.300</mat-card-subtitle>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+              <p><span class="title">Subtotal:</span> <span class="amount">$&nbsp;27.300</span></p>
+              <p>
                  <span class="title">Domicilio:</span>
                  <span class="amount">
                     $0
                  </span>
-              </li>
-           </ul>
-           <div class="total-checkout">
-              <p class="title">Total a pagar</p>
-              <p class="price">$27.300</p>
-           </div>
+              </p>
         </div>
+      </div>
+       <div class="row">
+         <div class="col-xs-12 right">
+           <div class="resume-checkout">
+             <div class="total-checkout">
+                <p class="title">Total a pagar</p>
+                <p class="price">$27.300</p>
+             </div>
+          </div>
+         </div>
+       </div>
+    
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary">Ir al carrito</button>

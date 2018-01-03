@@ -25,9 +25,11 @@ import {
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { OrderByComponent } from './order-by/order-by.component';
+import { OrderByComponent } from './order-by/order-by.component'
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { FilterPipe } from './filter.pipe'; 
+import { FilterPipe } from './filter.pipe';
+import { SortbyPipe } from './sortby.pipe';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import { FilterPipe } from './filter.pipe';
     SidebarComponent,
     OrderByComponent,
     ShoppingCartComponent,
-    FilterPipe
+    FilterPipe,
+    SortbyPipe
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { FilterPipe } from './filter.pipe';
     MatFormFieldModule,
     MatInputModule,
     MatListModule,
-    MatSelectModule
+    MatSelectModule, 
+    Ng2OrderModule
   ],
   providers: [
   ],

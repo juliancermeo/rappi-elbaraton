@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 import 'rxjs/add/operator/map';
 
@@ -13,6 +14,8 @@ import 'rxjs/add/operator/map';
 export class ProductsComponent implements OnInit {
   @Input() product: any;
   @Input() order: any;
+  @Input() searchText: string;
+  @Input() field: string;
 	public panelOpenState: boolean = false;
 	private apiUrl = "./../assets/data/products.json";
 	public data: any = {};
