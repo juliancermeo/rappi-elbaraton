@@ -1,0 +1,20 @@
+<div class="col-md-4 container-card" *ngFor="let product of data.products | filter : searchText">
+	<!-- | sortBy:order -->
+	<mat-grid-list cols="1" rowHeight="1:1.2"  >
+	  <mat-grid-tile>
+	    <mat-card class="card">
+	      <img mat-card-image src="https://t4.ftcdn.net/jpg/01/33/14/89/240_F_133148957_jM76yAt2lseVdyAAyqxFUXMTIZ66aHU9.jpg" alt="Photo of a Shiba Inu">
+	      <mat-card-content>
+	          <mat-card-title></mat-card-title>
+	          <mat-card-subtitle>{{product.name}}</mat-card-subtitle>
+	      </mat-card-content>
+	      <mat-card-actions>
+	        <button mat-raised-button >{{product.price}}</button>
+	        <button mat-raised-button color="primary" *ngIf="product.available == true" (click)="selectedProduct(product.id)">Agregar</button>
+	        <button mat-raised-button color="warn" *ngIf="product.available == false" disabled="">No disponible</button>
+	      </mat-card-actions>
+	    </mat-card>
+	  </mat-grid-tile>
+	</mat-grid-list>
+
+</div>

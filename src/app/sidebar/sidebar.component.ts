@@ -1,0 +1,47 @@
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { Http, Response } from '@angular/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import 'rxjs/add/operator/map';
+
+ 
+@Component({
+  selector: 'sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
+})
+
+export class SidebarComponent implements OnInit {
+	public panelOpenState: boolean = false;
+	private apiUrl = "./../assets/data/categories.json";
+	public data: any = {};
+  public max: any = 100;
+  public min: any = 0;
+
+
+  constructor(private http: Http) { }
+  // constructor(private appService: AppService) { }
+
+  ngOnInit() {
+  	this.getCategories();
+  	this.getCategoryList();
+  }
+
+  public getCategories() {
+    return this.http.get(this.apiUrl)
+    	.map((res: Response) => res.json())
+      
+  }
+
+  public getCategoryList() {
+  	this.getCategories()
+  		.subscribe((data) => {
+        	this.data = data;
+        	console.log(data);
+      	});
+
+  }
+    
+
+
+}

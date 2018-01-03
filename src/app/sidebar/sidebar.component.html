@@ -1,0 +1,47 @@
+<h4>Categorias</h4>
+<mat-accordion multi="true">
+  <mat-expansion-panel *ngFor="let cat of data.categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <h4>{{cat.name}} </h4>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <ul *ngFor="let sublevel of cat.sublevels">
+         <li><mat-checkbox>{{sublevel.name}}</mat-checkbox></li>
+         <li>
+           <ul *ngFor="let secondlevel of sublevel.sublevels">
+              <li><mat-checkbox>{{secondlevel.name}}</mat-checkbox></li>
+              <li>
+                <ul *ngFor="let thirdlevel of secondlevel.sublevels">
+                <li><mat-checkbox>{{thirdlevel.name}}</mat-checkbox></li>
+              </ul>
+              </li>
+            </ul>
+         </li>
+      </ul>
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+<div class="margin"></div>
+
+<h4>Precios</h4>
+	<mat-slider
+        [max]="max"
+        [min]="min">
+    </mat-slider>
+
+  <mat-form-field class="margin"> 
+    <input matInput type="number" placeholder="Min" [(ngModel)]="min">
+  </mat-form-field>
+  <mat-form-field class="margin">
+    <input matInput type="number" placeholder="Max" [(ngModel)]="max">
+  </mat-form-field>
+<div class="margin"></div>
+
+<h4>Disponibilidad</h4>
+<label *ngFor="let cat of data.categories">
+	<mat-checkbox>{{cat.name}}</mat-checkbox>
+</label>
+<div class="margin"></div>
+ 

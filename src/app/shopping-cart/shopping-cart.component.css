@@ -1,0 +1,7 @@
+.basket {
+	width: 30%;
+	position: fixed; 
+	right: 10px;
+	z-index: 10;
+	display: none;
+}
