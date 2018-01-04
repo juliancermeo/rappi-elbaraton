@@ -30,7 +30,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { FilterPipe } from './filter.pipe';
 import { SortbyPipe } from './sortby.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
-
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,8 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     MatInputModule,
     MatListModule,
     MatSelectModule, 
-    Ng2OrderModule
+    Ng2OrderModule,
+    Ng2FilterPipeModule
   ],
   providers: [
   ],

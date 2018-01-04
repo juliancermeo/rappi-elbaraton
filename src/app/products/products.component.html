@@ -1,7 +1,5 @@
-
-<div class="col-md-4 container-card" *ngFor="let product of data.products | filter : searchText | sortby : field " >
-	<!-- | sortBy:order -->
-	<mat-grid-list cols="1" rowHeight="1:1.2"  >
+<div class=" col-sm-6 col-md-4  container-card" *ngFor="let product of data.products | filter : searchText | sortby : field "  >
+	<mat-grid-list cols="1" rowHeight="1:1.28"  >
 	  <mat-grid-tile>
 	    <mat-card class="card">
 	      <img mat-card-image src="https://t4.ftcdn.net/jpg/01/33/14/89/240_F_133148957_jM76yAt2lseVdyAAyqxFUXMTIZ66aHU9.jpg" alt="Photo of a Shiba Inu">

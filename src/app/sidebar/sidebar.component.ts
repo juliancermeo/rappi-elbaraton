@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Http, Response } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SortbyPipe } from './../sortby.pipe'; 
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import 'rxjs/add/operator/map';
  
 @Component({
@@ -18,6 +19,7 @@ export class SidebarComponent implements OnInit {
 	public data: any = {};
   public max: any = 100;
   public min: any = 0;
+  public checked: boolean = false;
 
 
   constructor(private http: Http) { }
@@ -39,6 +41,11 @@ export class SidebarComponent implements OnInit {
         	this.data = data;
       	});
 
+  }
+
+  public verifychecked(value) {
+    this.checked = value;
+    console.log(value);
   }
 
 

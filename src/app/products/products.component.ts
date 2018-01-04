@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import 'rxjs/add/operator/map';
 
 @Component({
