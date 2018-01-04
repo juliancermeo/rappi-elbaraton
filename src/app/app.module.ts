@@ -31,6 +31,7 @@ import { FilterPipe } from './filter.pipe';
 import { SortbyPipe } from './sortby.pipe';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { CategoriesFilterService } from './categories-filter.service';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
     Ng2FilterPipeModule
   ],
   providers: [
+    CategoriesFilterService,
   ],
   bootstrap: [AppComponent]
 })

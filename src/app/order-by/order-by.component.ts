@@ -28,7 +28,6 @@ export class OrderByComponent implements OnInit {
   selectChange($event){
     this.change = $event;
     this.select.emit(this.change);
-    // console.log($event);
   }
 
 }

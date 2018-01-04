@@ -5,12 +5,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class FilterPipe implements PipeTransform {
-  transform(items: any[], searchText: string): any[] {
+  transform(items: any[], searchText: string, idCategory: Number): any[] {
+	  searchText = searchText.toLowerCase();
     if(!items) return [];
-    if(!searchText) return items;
-	searchText = searchText.toLowerCase();
-	return items.filter( it => {
-      return it.name.toLowerCase().includes(searchText);
-    });
+    if(idCategory && !searchText){
+      return items.filter( it => (it.sublevel_id === idCategory));
+    }
+    if(!idCategory && searchText){
+      return items.filter( it => (it.name.toLowerCase().includes(searchText)));
+    }
+    if(idCategory && searchText){
+      return items.filter( it => (it.name.toLowerCase().includes(searchText) && it.sublevel_id === idCategory));
+    }
+    return items;
    }
 }

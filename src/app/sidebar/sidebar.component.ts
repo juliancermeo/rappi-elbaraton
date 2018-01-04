@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SortbyPipe } from './../sortby.pipe'; 
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { CategoriesFilterService } from '../categories-filter.service';
 import 'rxjs/add/operator/map';
  
 @Component({
@@ -22,7 +23,7 @@ export class SidebarComponent implements OnInit {
   public checked: boolean = false;
 
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private CategoriesFilter: CategoriesFilterService) { }
 
   ngOnInit() {
   	this.getCategories();
@@ -45,11 +46,6 @@ export class SidebarComponent implements OnInit {
 
   public verifychecked(value) {
     this.checked = value;
-    console.log(value);
+    this.CategoriesFilter.set(value);
   }
-
-
-    
-
-
 }

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { Ng2OrderModule } from 'ng2-order-pipe';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
+import { CategoriesFilterService } from '../categories-filter.service';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import 'rxjs/add/operator/map';
 
@@ -22,12 +23,14 @@ export class ProductsComponent implements OnInit {
 	public data: any = {};
   public productList: any;
   public products: any;
+  public idCategory: Number;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private CategoriesFilter: CategoriesFilterService) { }
 
   ngOnInit() {
   	this.getProducts();
-  	this.getProductsList();
+    this.getProductsList();
+    this.updateCategoryFilter();
   }
 
   public getProducts() {
@@ -39,14 +42,17 @@ export class ProductsComponent implements OnInit {
   	this.getProducts()
   		.subscribe((data) => { 
         	this.data = data;
-        	console.log(data);
       	});
   }
 
   public selectedProduct(productId) {
     this.product = productId;
-    console.log(productId);
+  }
 
+  updateCategoryFilter() {
+    this.CategoriesFilter.currentIdCategory.subscribe((data) => { 
+      this.idCategory = data;
+    });
   }
 
 
