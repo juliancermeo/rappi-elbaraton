@@ -7,6 +7,9 @@ import { FormGroup, FormBuilder, Validators, ReactiveFormsModule} from '@angular
 import { CategoriesFilterService } from '../categories-filter.service';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import 'rxjs/add/operator/map';
+import { ShoppingService } from '../shopping.service';
+import { ProductInterface } from '../product.interface';
+
 
 @Component({
   selector: 'app-products',
@@ -14,7 +17,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  @Input() product: any;
+  @Input() product: ProductInterface;
   @Input() order: any;
   @Input() searchText: string;
   @Input() field: string;
@@ -25,12 +28,17 @@ export class ProductsComponent implements OnInit {
   public products: any;
   public idCategory: Number;
 
-  constructor(private http: Http, private CategoriesFilter: CategoriesFilterService) { }
+  constructor(
+    private http: Http,
+    private CategoriesFilter: CategoriesFilterService,
+    private Shopping: ShoppingService
+  ) { }
 
   ngOnInit() {
   	this.getProducts();
     this.getProductsList();
     this.updateCategoryFilter();
+    this.Shopping.getLocalStorage();
   }
 
   public getProducts() {
@@ -45,8 +53,8 @@ export class ProductsComponent implements OnInit {
       	});
   }
 
-  public selectedProduct(productId) {
-    this.product = productId;
+  public addToCart(product) {
+    this.Shopping.toggledProduct(product);
   }
 
   updateCategoryFilter() {

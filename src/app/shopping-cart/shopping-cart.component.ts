@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { ShoppingService } from '../shopping.service';
 
 @Component({
   selector: 'shopping-cart',
@@ -8,9 +9,14 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class ShoppingCartComponent implements OnInit {
   @Input() cart = [];
 
-  constructor() { }
+  constructor(private Shopping: ShoppingService) { }
 
   ngOnInit() {
+  }
+
+
+  public emptyCart(): void {
+    this.Shopping.clearLocalStorage();
   }
 
 }

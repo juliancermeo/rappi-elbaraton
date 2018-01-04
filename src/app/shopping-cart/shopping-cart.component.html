@@ -1,4 +1,4 @@
-<div class="basket container" *ngIf="show">
+<div class="basket container" >
   <mat-card >
     <mat-card-header>
       <mat-card-title><h4>Tu orden en el Baraton es</h4></mat-card-title>
@@ -9,25 +9,19 @@
     <div class="row">
       
     </div>
-    <div class="row">
+    <div class="row" *ngFor="let product of Shopping.shoppingCar"> 
       <div class="col-xs-2"> <mat-card-title>1</mat-card-title> </div>
         <div class="col-xs-7">
-          <mat-card-title>Producto</mat-card-title>
+          <mat-card-title>{{product.name}}</mat-card-title>
         </div>
         <div class="col-xs-3">
-          <mat-card-subtitle>$27.300</mat-card-subtitle>
+          <mat-card-subtitle>{{product.price}}</mat-card-subtitle>
         </div>
       </div>
       <hr>
       <div class="row">
         <div class="col-xs-12 subtotal">
               <p><small class="title">Subtotal:</small> <small class="amount">$&nbsp;27.300</small></p>
-              <p>
-                 <small class="title">Domicilio:</small>
-                 <small class="amount">
-                    $0
-                 </small>
-              </p>
         </div>
       </div>
        <div class="row">
@@ -46,6 +40,9 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="primary">Ir al carrito</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" (click)="emptyCart()">Vaciar Carrito</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -3,7 +3,7 @@
 	position: fixed; 
 	right: 10px;
 	z-index: 10;
-	display: none;
+	/*display: none;*/
 
 }
 button {
@@ -28,4 +28,8 @@ p {
 hr {
     margin-top: 2px;
     margin-bottom: 10px;
+}
+.mat-card-actions, .mat-card-content, .mat-card-subtitle, .mat-card-title {
+    display: block;
+    margin-bottom: 5px;
 }
