@@ -19,4 +19,7 @@ export class ShoppingCartComponent implements OnInit {
   public emptyCart(): void {
     this.Shopping.clearLocalStorage();
   }
+  public getTotal() {
+    return this.Shopping.getTotal();
+  }
 }

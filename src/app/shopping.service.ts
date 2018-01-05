@@ -26,6 +26,14 @@ export class ShoppingService {
     localStorage.removeItem('cart');
     this.shoppingCar = [];
   }
+  
+  getTotal(){
+    const carPrice = this.shoppingCar.map((a) => {
+      const priceA = a.price.replace('$','').replace(',','');
+      return parseInt(priceA);
+    });
+    return carPrice.reduce((a, b) => a + b, 0);
+  }
 
 
 }

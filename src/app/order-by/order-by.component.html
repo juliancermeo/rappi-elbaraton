@@ -1,11 +1,11 @@
 <div class="col-md-6">
-	<h5> 
+	<h5 class="responsive-center"> 
 		<mat-form-field>
 			<input matInput placeholder="Buscar..." [(ngModel)]="searchText" (ngModelChange)="inputChange($event)">
 		</mat-form-field>
 	</h5>
 </div>
-<div class=".col-md-6 right">
+<div class=".col-md-6 right responsive-center">
 	<h5>
 		<mat-form-field >
 		  <mat-select placeholder="Ordenar por: " [(ngModel)]="field" (ngModelChange)="selectChange($event)" [value]="selected">

@@ -1,3 +1,17 @@
 .right {
 	text-align: right;
 }
+@media(max-width: 600px) {
+
+	h5 {
+		width: 100% !important;
+		display: block;
+	}
+	.responsive-center {
+		text-align: center;
+	}
+	.mat-form-field-infix, .mat-form-field-wrapper {
+		width: 100%;
+	}
+
+}
