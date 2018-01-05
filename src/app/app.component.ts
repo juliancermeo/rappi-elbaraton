@@ -16,6 +16,7 @@ export class AppComponent {
   inputSearch: any;
   sortBy: any;
   order: string = "";
+  show: any;
 
   search(search){
     this.inputSearch = search;

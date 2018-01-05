@@ -8,15 +8,15 @@ import { ShoppingService } from '../shopping.service';
 })
 export class ShoppingCartComponent implements OnInit {
   @Input() cart = [];
+  public itemCount: number;
+  public sum: number;
 
   constructor(private Shopping: ShoppingService) { }
 
   ngOnInit() {
+  	
   }
-
-
   public emptyCart(): void {
     this.Shopping.clearLocalStorage();
   }
-
 }

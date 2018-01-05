@@ -1,3 +1,11 @@
 .container-card {
 	min-height: 290px;
 }
+.mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled], .mat-card-actions .mat-button:first-child, .mat-card-actions .mat-raised-button:first-child {
+	display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.mat-raised-button.mat-warn[disabled], .mat-raised-button[disabled][disabled] {
+	margin-left: 0;
+}
